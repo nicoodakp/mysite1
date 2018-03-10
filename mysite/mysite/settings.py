@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django_comments',
     'posts',
     'django.contrib.sites',
-    'taggit_templatetags2',
+    
 
     'django.contrib.admin',
     'django.contrib.auth',
