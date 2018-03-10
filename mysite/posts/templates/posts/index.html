@@ -1,13 +1,7 @@
 {% extends "posts/post-base.html" %}
 {% block content %}
-{% load taggit_templatetags2_tags %}
-{% get_tagcloud as tags %}
 
-<div class="col-sm-3 offset-sm-1 blog-sidebar">
-  <div class="sidebar-module">
 
-  </div>
-</div>
 {% for post in object_list %}
 <div class="container">
   <div class="row">
