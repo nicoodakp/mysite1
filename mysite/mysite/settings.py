@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+0u3er2%p@*ark_!5zda$e#mbeouyr!12q5*6i@_5qqy**cpsy'
+SECRET_KEY = 'password%%^@#$!^$&%^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -171,7 +171,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'kai.peng@uconn.edu'
 EMAIL_HOST_USER = 'kai.peng@uconn.edu'
-EMAIL_HOST_PASSWORD = 'Nov@1111'
+EMAIL_HOST_PASSWORD = '123'
 EMAIL_USE_TLS = False
 EMAIL_PORT = "1025"
 
