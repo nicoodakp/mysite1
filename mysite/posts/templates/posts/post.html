@@ -1,0 +1,81 @@
+{% extends "posts/post-base.html" %}
+{% load staticfiles %}
+
+
+{% block title %}<div class="site-heading">
+    <h2> <p class="text-white">{{ post.title }}</p></h2>
+<span class="subheading">{{ post.updated }}</span>{% endblock %}
+
+
+
+			{% block content %}
+				<div class = "container">
+						<div class="row">
+								<div class="col-lg-8 col-md-10 mx-auto">
+					<p>{{ post.body|safe|linebreaks}}</p>
+				        {% for tag in post.tags.all %}
+          				<a href="/posts/tag/{{tag}}"><span class="badge badge-pill badge-info">{{tag}}</span></a>
+					{% endfor %}
+					<hr>
+
+                  <button type="button" class="btn btn-primary float-lg-right" onclick="goBack()">Go Back</button>
+                  <script>
+                      function goBack() {
+                          window.history.back();
+                      }
+                      </script>
+                  </div>
+            </div>
+      </div>
+<div class = "container">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 mx-auto">
+
+<!-- <hr> -->
+<!-- {% load i18n %} -->
+{% load comments %}
+{% load comments_xtd %}
+<div id="comments">
+
+  {% get_comment_count for object as comment_count %}
+  {% if comment_count %}
+   <p class="text-center h6">
+    {% blocktrans count comment_count=comment_count %}
+    There is {{ comment_count }} comment below.
+    {% plural %}
+    There are {{ comment_count }} comments below.
+    {% endblocktrans %}
+  </p>
+
+  {% endif %}
+
+<hr>
+<p class="text-center h4">Leave a comment</p>
+  {% if object.allow_comments %}
+  <div class="comment">
+
+    <!-- <H4 class="text-center">Post your comment</H4> -->
+    <div class="well">
+      {% render_comment_form for object %}
+    </div>
+  </div>
+  {% else %}
+  <h5 class="text-center">comments are disabled for this article</h5>
+  {% endif %}
+
+  {% if comment_count %}
+  <hr/>
+
+          <ul class="media-list" id="comment-list">
+              {% render_xtdcomment_tree for object %}
+          </ul>
+  {% endif %}
+
+
+</div>
+
+      </div>
+   </div>
+</div>
+<a href="#"><p class="text-center"> Back to top</p></a>
+{% endblock %}

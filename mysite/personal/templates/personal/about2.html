@@ -1,0 +1,25 @@
+{% extends "personal/header.html" %}
+{% load staticfiles %}
+{% block additional_styles %}
+<style>
+   header {
+    background-image: url('static/personal/img/about-bg.jpg');
+   }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>Hi! I’m Kai Peng. A senior undergraduate student from the University of Connecticut. And majoring in Statistic. I am from China. And currently lives in Vernon, Connecticut.</p>
+        <p>I want to start a blog mostly because I want to share what I have learned and done in the past few years – from elementary statistic, business analysis using different model configuration, to module benchmark, dealing with empty sample points and so on. I am typically interesting in the field of data manipulation, visualization and the methodology of survey research. After all, if samples were misrepresented at the first hand, nothing could be remedied.</p>
+        <p>During the making of this blog, I found out web develop was intensively interesting. This blog was built using Django 2.0 and Python 3.6. Compare to other programming language instruction such as R-studio, SQL or Python, I think the Django documentation was by far the easiest to read and understood. I try to put the whole project on GitHub along with a tutorial here as soon as I can.</p>
+        <p>If you have any suggestions for any improvement please fill out the contact form or email me at kai.peng@uconn.edu. Thank you very much for your time.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock %}
